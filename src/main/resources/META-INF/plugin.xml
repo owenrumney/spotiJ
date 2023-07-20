@@ -1,0 +1,37 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.github.owenrumney.spotiJ</id>
+    <name>SpotiJ</name>
+    <idea-version since-build="222"/>
+    <vendor email="owenrumney@gmail.com">owenrumney</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <description><![CDATA[
+        Spotify plugin for the JetBrain IDEs. Makes use of either DBUS for Linux systems or AppleScript for MacOS based systems.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <em>0.0.1 Initial release</em><br>
+]]></change-notes>
+
+    <extensions defaultExtensionNs="com.intellij">
+    <statusBarWidgetFactory implementation="com.github.owenrumney.spotij.services.SpotijStatusBarWidgetFactory" />
+    </extensions>
+
+    <actions>
+        <action id="playPause"
+                class="com.github.owenrumney.spotij.actions.TogglePlayPauseAction"
+                text="SpotiJ Play Pause" />
+        <action id="previous"
+                class="com.github.owenrumney.spotij.actions.PrevTrackAction"
+                text="SpotiJ Previous" />
+        <action id="next"
+                class="com.github.owenrumney.spotij.actions.NextTrackAction"
+                text="SpotiJ Next" />
+    </actions>
+
+<!--    <applica<ationListeners>-->
+<!--        <listener class="com.github.owenrumney.spotij.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>-->
+<!--    </applicationListeners>-->
+</idea-plugin>
