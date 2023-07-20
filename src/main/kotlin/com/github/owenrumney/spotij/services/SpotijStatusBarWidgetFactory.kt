@@ -54,18 +54,6 @@ class SpotijStatusBarWidgetFactory : StatusBarWidgetFactory {
                         return "SpotiJ"
                     }
 
-                    override fun getClickConsumer(): Consumer<MouseEvent>? {
-                        return Consumer {
-//                            SpotifyService.getCodeFromBrowser()
-                        }
-                    }
-
-                    @Deprecated("not used")
-                    override fun getPopupStep(): ListPopup? {
-
-                        return null
-                    }
-
                     override fun getSelectedValue(): String? {
                         return " %s".format(SpotifyConnector.getTrackDetails())
                     }
