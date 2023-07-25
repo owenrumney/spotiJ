@@ -11,6 +11,8 @@ import com.intellij.ui.awt.RelativePoint
 import com.intellij.util.Consumer
 import java.awt.*
 import java.awt.event.MouseEvent
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 import javax.swing.*
 
 class SpotijStatusBarWidgetFactory : StatusBarWidgetFactory {
@@ -33,9 +35,9 @@ class SpotijStatusBarWidgetFactory : StatusBarWidgetFactory {
 
     override fun createWidget(project: Project): StatusBarWidget {
         spotiJWidget = object : StatusBarWidget {
-
+            val scheduler = Executors.newScheduledThreadPool(1)
             override fun dispose() {
-                statusUpdaterThread!!.interrupt()
+                scheduler.shutdown()
             }
 
             override fun ID(): String {
@@ -44,8 +46,7 @@ class SpotijStatusBarWidgetFactory : StatusBarWidgetFactory {
 
             override fun install(statusBar: StatusBar) {
                 val statusUpdate = StatusUpdater(statusBar)
-                statusUpdaterThread = Thread(statusUpdate)
-                statusUpdaterThread!!.start()
+                scheduler.scheduleAtFixedRate(statusUpdate, 0, 1, TimeUnit.SECONDS)
             }
 
             override fun getPresentation(): StatusBarWidget.WidgetPresentation? {

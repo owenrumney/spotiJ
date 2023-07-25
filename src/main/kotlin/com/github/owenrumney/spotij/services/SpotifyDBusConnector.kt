@@ -2,8 +2,6 @@ package com.github.owenrumney.spotij.services
 
 import org.freedesktop.dbus.connections.impl.DBusConnectionBuilder
 
-
-
 object SpotifyDBusConnector {
 
     const val BUS_NAME = "org.mpris.MediaPlayer2.spotify"

@@ -5,6 +5,7 @@
     <idea-version since-build="222"/>
     <vendor email="owenrumney@gmail.com">owenrumney</vendor>
 
+
     <depends>com.intellij.modules.platform</depends>
 
     <description><![CDATA[
@@ -12,6 +13,8 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <em>0.0.3 Add an icon</em><br>
+    <em>0.0.2 Update scheduler</em><br>
     <em>0.0.1 Initial release</em><br>
 ]]></change-notes>
 
