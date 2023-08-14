@@ -13,13 +13,14 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <em>0.0.4 Update plugin.xml to support 2023.2 requirement</em>
     <em>0.0.3 Add an icon</em><br>
     <em>0.0.2 Update scheduler</em><br>
     <em>0.0.1 Initial release</em><br>
 ]]></change-notes>
 
     <extensions defaultExtensionNs="com.intellij">
-    <statusBarWidgetFactory implementation="com.github.owenrumney.spotij.services.SpotijStatusBarWidgetFactory" />
+    <statusBarWidgetFactory id="SpotiJ" implementation="com.github.owenrumney.spotij.services.SpotijStatusBarWidgetFactory" />
     </extensions>
 
     <actions>
